@@ -1,11 +1,15 @@
 @charset "utf-8";
 
+/* デスクトップ */
+
 body{
     margin: 0;
 }
 img{
-    justify-content: cover;
+    object-fit: cover;
 }
+
+/* デスクトップヘッダー */
 .header-line{
     background-color: black;
     width: 100%;
@@ -18,108 +22,368 @@ header{
     position: relative;
 }
 .header-image{
-    margin-top: 20vw;
+    margin-top: 16vw;
     width: 100%;
     height: 80vw;
+    z-index: 1;
 }
+.header_text{ 
+    position: absolute;
+    top: 40vw;
+    color: white;
+    left: 30vw;
+    text-align: center;
+}
+.header_text h1{
+    font-size: 6vw;
+}
+
+.header_text p{
+    margin-bottom: 3vw;
+}
+
+.header_text a{
+    border: 2px solid white;
+    color: white;
+    padding: 1vw 5vw;
+    text-decoration: none; 
+}
+
 .logo{
     position: fixed;
+    top: 2vw;
     width: 20%;
+    background-color: white;
  }
+
+.menu_1{
+    display: flex;
+}
+
+.kart{
+    position: absolute;
+    left: 55vw;
+    top: 5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+}
+
+.kart-image{
+    position: absolute;
+    top: 2.5vw;
+    left: 8vw;
+    width: 3vw;
+    height: 2vw;
+}
+
+.login{
+    position: absolute;
+    left: 70vw;
+    top: 5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+  }
+
+  .login-image{
+    position: absolute;
+    top: 2vw;
+    left: 9vw;
+    width: 3vw;
+    height: 3vw;
+  }
+/* ーーーーーーーーーーーーー */
+
+
+/* ハンバーガーメニュー */
+#container{
+    display: inline-block;
+    border-radius: 500px;
+    position: relative;
+    margin: 10px;
+    padding-left: 9vw;
+    cursor: pointer;
+}
+
+.bar{
+    position: absolute;
+    left: 90vw;
+    height: 8px;
+    width: 50%;
+    background-color: black;
+    border-radius: 9px;
+    transition: ease 0.3s; /* easeで動きを滑らかにする */
+}
+.top{
+    top: 5vw;
+}
+
+.middle{
+    top: 7vw;
+}
+.bottom{
+    top: 9vw;
+}
+
+.close .top {
+   transform: rotate(45deg);
+   top: 8vw;
+}
+
+.close .middle {
+   opacity: 0;
+}
+
+ .close .bottom {
+    transform: rotate(-45deg);
+    top: 8vw;
+ }
+
+  .nav{
+      position: fixed;
+      top: 3rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility .5s;
+  }
+  .nav_ul{
+    list-style: none; 
+ }
+
+  .nav .close{
+      background-color: white;
+      opacity: 1;
+      color: red;
+      visibility: visible;
+  }
+
+ /*                          */
+
+
+/* デスクトップセクション */
+.product h2{
+    font-size: 7vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+  .product_1,
+  .product_2{
+      display: flex;
+      margin-bottom: 7vw;
+      font-size: 4vw;
+      font-weight: bold;
+      justify-content: center;
+  }
+
+  .product img{
+      width: 20vw;
+      margin: 0 5vw;
+  }
+
+  .product p{
+    margin: 0 5vw;
+    text-align: center;
+}
+
+.icon img{
+    width: 15vw;
+
+}
+
+
+/* ------------------------- */
+
+
+/* デスクトップフッター */
+
+footer{
+    position: relative;
+    background-color: black;
+    font-size: 3vw;
+    color: white;
+}
+
+.text{
+    color: white;
+    text-align: center;
+    margin-left: 60vw;
+}
+
+.text a{
+    text-decoration: none;
+    color: white;
+}
+
+.icon{
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 5vw;
+}
+
+
+/* ------------------------ */
+
+
+
 
 /* モバイル版 */
 @media screen and (max-width: 800px){
 
 /* ------ モバイルヘッダー -------*/
-  .logo{
-      top: 5vw;
-      padding: 0;
-      margin: 2vw;
-  }
-  .kart{
-      position: absolute;
-      left: 30vw;
-      top: 5vw;
-      font-size: 3vw;
-      font-weight: bold;
-      display: flex;
-  }
-  .login{
-    position: absolute;
-    left: 55vw;
-    top: 5vw;
-    font-size: 3vw;
-    font-weight: bold;
-    display: flex;
-  }
-  span img{
-      width: 10vw;
-      height: 9vw;
-      margin-left: 2vw;
-  }
 
-  .header_text{
-      text-align: center;
-      position: absolute;
-      top: 35vw;
-      left: 14vw;
-      color: white;
-      font-size: 3vw;
-      line-height: 10vw;
-  }
-  h1{
-      font-size: 10vw;
-      margin: 0;
-  }
-  .header_text a{
-      border: 2px solid white;
-      color: white;
-      padding: 3vw 5vw;
-      text-decoration: none;
-  }
-  /* ----------------------------- */
-  /* モバイルセクション */
-  .product{
-      text-align: center;
-      font-size: 5vw;
-      font-weight: bold;
-      margin: 0;
-  }
-  .product img{
-      width: 50vw;
-      height: 50vw;
-  }
-/* モバイルフッター */
-footer{
-    background-color: black;
-    font-size: 5vw;
-    color: white;
-    text-align: center;
-}
+    .logo{
+        position: fixed;
+        top: 4vw;
+        padding: 0;
+        margin: 2vw;
+        background-color: rgba(0,0,0,0);
+    }
+    span img{
+        width: 10vw;
+        height: 9vw;
+        margin-left: 2vw;
+    }
 
-h3{
-    margin: 0;
-}
-footer p{
-    margin: 0;
-    padding-right:30vw;
-}
+    .menu_1{
+        margin-top: 2vw;
+    }
+
+    .header-image{
+        margin-top: 15vw;
+    }
+
+    .header_text{
+        text-align: center;
+        position: absolute;
+        top: 35vw;
+        left: 30vw;
+        color: white;
+        font-size: 3vw;
+        line-height: 10vw;
+    }
+    h1{
+        font-size: 10vw;
+        margin: 0;
+    }
+    .header_text a{
+        padding: 3vw 5vw;
+    }
 
 
-footer a{
-    color: white;
-    text-decoration: none;  
-}
+    .bar{
+        left: 85vw;
+        height: 4px;
+        width: 60%;
+    }
 
-.icon{
-    display: flex;
-    display: block;
-}
-.icon img{
-    width: 20vw;
-}
 
-/*  */
-  
-  /*  */
+    .top{
+        top: 4vw;
+    }
+    .middle{
+        top: 6vw;
+    }
+    .bottom{
+        top: 8vw;
+    }
+    .close .top {
+       top: 7vw;
+    }
+     .close .bottom {
+        top: 7vw;
+     }
+     .kart{
+        position: absolute;
+        left: 40vw;
+        top: 5vw;
+        font-size: 2vw;
+        font-weight: bold;
+        display: flex;
+    }
+    
+    .kart-image{
+        position: absolute;
+        top: 1vw;
+        left: 8vw;
+        width: 6vw;
+        height: 5vw;
+    }
+
+    .login{
+        position: absolute;
+        left: 60vw;
+        top: 5vw;
+        font-size: 2vw;
+        font-weight: bold;
+        display: flex;
+      }
+    
+      .login-image{
+        position: absolute;
+        top: 1vw;
+        left: 9vw;
+        width: 6vw;
+        height: 6vw;
+      }
+
+    /* ----------------------------- */
+    /* モバイルセクション */
+    .product{
+        text-align: center;
+        font-size: 5vw;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .product p{
+        margin-bottom: 3vw;
+    }
+    .product_1,
+    .product_2{
+        display: block;
+    }
+
+    .product img{
+        width: 50vw;
+        height: 50vw;
+    }
+    /* モバイルフッター */
+    footer{
+        text-align: center;
+        height: 50vw;
+    }
+
+    h3{
+        margin: 0;
+    }
+    footer p{
+        margin: 0;
+        padding-right:30vw;
+    }
+
+    .text{
+        margin: 0;
+        font-size: 4vw;
+    }
+
+    .icon{
+        display: flex;
+        display: block;
+        position: absolute;
+        top: 28vw;
+        left: 17vw;
+
+    }
+    .icon img{
+        width: 20vw;
+    }
+
 }
